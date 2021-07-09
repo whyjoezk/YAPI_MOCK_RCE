@@ -110,7 +110,7 @@ class yapi_rce:
         try:
             req = self.session.get(url=poc_url, headers=self.UA, timeout=self.timeout, verify=False)
             if req.status_code == 200 and self.random_num in req.text:
-                print("The target {url} has a YAPI RCE".format(url=poc_url))
+                print("[*]The target {url} has a YAPI RCE".format(url=poc_url))
                 return True
             else:
                 print("There is no vulnerability in the {url}".format(url=poc_url))
